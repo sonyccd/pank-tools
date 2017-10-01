@@ -1,0 +1,58 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.main-container {
+    font-family: "Montserrat";
+}
+
+.header {
+    height: 80px;
+}
+
+.pendo-icon {
+    height: 80px;
+}
+
+.jumbotron {
+    height: 600px;
+    flex-direction: column;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pendo-boxed {
+    height: 150px;
+    margin-bottom: 30px;
+}
+
+.jumbotron-title {
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.resource-list {
+    margin: 75px;
+}
+
+a {
+    text-decoration: none;
+    color: #ec2059;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+li {
+    margin-bottom: 20px;
+    list-style: none;
+}

@@ -1,97 +1,32 @@
----
-layout: home
-title: BLOG
-description: "The personal blog of Hossain Mohd. Faysal, a doctoral candidate in Electrical Engineering at University of Pennsylvania."
-headline: An Engineer's Diary
-tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsylvania, doha, Qatar]
----
-{% if site.paginate %}
-	{% for post in paginator.posts %}
-    <article class="notepad-index-post post row">
-        <div class="small-12 medium-3 large-2 columns datetime">
-            <span class="notepad-post-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">
-                    <span class="day">
-                        {{ post.date | date: "%d" }}
-                    </span>
-                    <span class="month-year">
-                        {{ post.date | date: "%B %Y" }}
-                    </span>
-                </time>
-            </span>
-        </div>
-        <div class="small-12 medium-9 large-10 columns">
-            <header class="notepad-post-header">
-                <h3 class="notepad-post-title">
-                    <a href="{{ site.url }}{{ post.url }}">
-                        {{ post.title }}
-                    </a>
-                </h3>
-            </header>
-            <section class="notepad-post-excerpt">
-                <p>{{ post.content | strip_html | truncatewords:40 }}</p>
-            </section>
-            
-                <div class="notepad-index-post-tags">
-                {% for tag in post.categories %}<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" title="Other posts from the {{ tag | capitalize }} category">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
-                    
-                </div>
-            
-        </div>
-    </article>
-	{% endfor %}
-    <nav class="pagination" role="navigation">
-    {% if paginator.previous_page %}
-	    {% if paginator.previous_page == 1 %}
-	    <a class="newer-posts" href="{{ site.url }}"><i class="fa fa-chevron-left"></i> Newer</a>
-	    {% else %}
-	    <a class="newer-posts" href="{{ site.url }}/page{{ paginator.previous_page }}"><i class="fa fa-chevron-left"></i> Newer</a>
-	    {% endif %}
-	{% else %}
-    <span class="newer-posts faded"><i class="fa fa-chevron-left"></i> Newer</span>
-    {% endif %}
+<!DOCTYPE html>
+<html>
 
-    
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    	{% if paginator.next_page %} 
-        <a class="older-posts" href="{{ site.url }}/page{{ paginator.next_page }}/">Older <i class="fa fa-chevron-right"></i></a>
-    	{% else %}
-    	<span class="older-posts faded">Older <i class="fa fa-chevron-right"></i></span>
-    	{% endif %}
-	</nav>
-{% else %}
-	{% for post in site.posts %}
-    <article class="notepad-index-post post row">
-        <div class="small-12 medium-3 large-2 columns datetime">
-            <span class="notepad-post-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">
-                    <span class="day">
-                        {{ post.date | date: "%d" }}
-                    </span>
-                    <span class="month-year">
-                        {{ post.date | date: "%B %Y" }}
-                    </span>
-                </time>
-            </span>
+    <head>
+        <title>Pank Tools</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="header">
+                <img class="pendo-icon" src="img/pendo-icon.png"/>
+            </div>
+            <div class="jumbotron">
+                <div><img class="pendo-boxed" src="img/pendo-boxed.png"></div>
+                <div class="jumbotron-title">Development Resources</div>
+            </div>
+            <div class="content"></div>
+
+            <ul class="resource-list">
+                <li><a href="https://github.com/tldr-pages/tldr">TLDR-</a> A collection of simplified and community-driven man pages.</li>
+                <li><a href="https://github.com/gleitz/howdoi">howdoi-</a> Are you a hack programmer? Do you find yourself constantly Googling for how to do basic programing tasks?
+                    Suppose you want to know how to format a date in bash. Why open your browser and read through blogs (risking major distraction) when you can simply stay in the console and ask howdoi?</li>
+                <li><a href="https://kapeli.com/dash">Dash-</a> Dash is an API Documentation Browser and Code Snippet Manager. Dash stores snippets of code and instantly searches offline documentation sets for 150+ APIs (for a full list, see below). You can even generate your own docsets or request docsets to be included.</li>
+                <li><a href="https://www.gitkraken.com/">Git Kraken-</a> The legendary Git GUI client for Windows, Mac AND Linux.</li>
+                <li><a href="https://hyper.is/">Hyper-</a> A terminal built on web technologies</li>
+                <li><a href="https://www.jetbrains.com/student/">JetBrains-</a> Are you learning Java, PHP, Ruby, Python, JavaScript, Objective-C or .NET technologies?
+                    Or maybe you just plan to? Do it right from the start, with award-winning professional developer tools from JetBrains. And the best part: it’s free of charge.</li>
+            </ul>
         </div>
-        <div class="small-12 medium-9 large-10 columns">
-            <header class="notepad-post-header">
-                <h3 class="notepad-post-title">
-                    <a href="{{ site.url }}{{ post.url }}">
-                        {{ post.title }}
-                    </a>
-                </h3>
-            </header>
-            <section class="notepad-post-excerpt">
-                <p>{{ post.content | strip_html | truncatewords:100 }}</p>
-            </section>
-            
-                <div class="notepad-index-post-tags">
-                {% for tag in post.categories %}<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" title="Other posts from the {{ tag | capitalize }} category">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
-                    
-                </div>
-            
-        </div>
-    </article>
-	{% endfor %}  
-{% endif %}
+    </body>
+</html>
